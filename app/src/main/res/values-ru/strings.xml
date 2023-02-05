@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lebedeva Kinopoisk</string>
+    <string name="favourites">Избранное</string>
+    <string name="poster">Постер фильма</string>
+    <string name="popular">Популярные</string>
+    <string name="search">Поиск</string>
+    <string name="upload">Загрузка</string>
+</resources>
