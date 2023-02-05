@@ -35,10 +35,11 @@
             android:layout_height="30dp"
             android:layout_marginTop="57dp"
             android:layout_marginEnd="22dp"
+            android:contentDescription="@string/search"
             android:src="@drawable/search_foreground"
             android:textColor="@color/dodger_blue"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_films"
@@ -46,9 +47,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="21dp"
+            android:layout_marginEnd="16dp"
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_popularFilms"
             app:listData="@{viewModel.film}" />
 
@@ -56,6 +58,7 @@
             android:id="@+id/status_image"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:contentDescription="@string/upload"
             app:KinopoiskApiStatus="@{viewModel.status}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

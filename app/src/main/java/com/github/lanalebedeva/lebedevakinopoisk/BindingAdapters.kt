@@ -18,6 +18,7 @@ import com.github.lanalebedeva.lebedevakinopoisk.topfilms.KinopoiskApiStatus
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<Film>?) {
     val adapter = recyclerView.adapter as FilmAdapter
     adapter.submitList(data)
+//    recyclerView.addItemDecoration()
 }
 
 
@@ -53,6 +54,3 @@ fun bindStatus(statusImageView: ImageView, status: KinopoiskApiStatus) {
         }
     }
 }
-
-//@BindingAdapter("waitAnswer")
-//fun bindWait()

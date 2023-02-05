@@ -18,6 +18,6 @@ data class Film(
         mapGenres.entries.joinToString {
             it.value
         }
-    }.joinToString(separator = ", ", prefix = "", postfix = "", limit = 3, truncated = "...")
+    }.joinToString(separator = ", ", prefix = "", postfix = "", limit = 2, truncated = "...")
 
 }

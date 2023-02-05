@@ -13,13 +13,11 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cl_item_constrain"
-        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="9dp"
         cardView:cardCornerRadius="8dp"
-        cardView:cardElevation="16dp"
-        android:layout_margin="5dp">
+        cardView:cardElevation="6dp"
+        app:cardUseCompatPadding="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -45,7 +43,7 @@
                 android:id="@+id/tv_item_nameRu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:paddingHorizontal="15dp"
                 android:layout_marginTop="26dp"
                 android:text="@{film.nameRu}"
                 android:textSize="16sp"
