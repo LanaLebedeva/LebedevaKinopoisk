@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.github.lanalebedeva.lebedevakinopoisk.databinding.FilmItemBinding
 import com.github.lanalebedeva.lebedevakinopoisk.network.Film
 
-class FilmAdapter:  ListAdapter<Film, FilmAdapter.FilmViewHolder>(DiffCallback) {
+class FilmAdapter(
+    private val action: (pos: Int) -> Unit,
+) : ListAdapter<Film, FilmAdapter.FilmViewHolder>(DiffCallback) {
 
     class FilmViewHolder(
         private var binding: FilmItemBinding
@@ -20,6 +22,7 @@ class FilmAdapter:  ListAdapter<Film, FilmAdapter.FilmViewHolder>(DiffCallback) 
             binding.executePendingBindings()
         }
     }
+
     companion object DiffCallback : DiffUtil.ItemCallback<Film>() {
         override fun areItemsTheSame(oldItem: Film, newItem: Film): Boolean {
             return oldItem.filmId == newItem.filmId
@@ -48,6 +51,8 @@ class FilmAdapter:  ListAdapter<Film, FilmAdapter.FilmViewHolder>(DiffCallback) 
     override fun onBindViewHolder(holder: FilmViewHolder, position: Int) {
         val film = getItem(position)
         holder.bind(film)
-//        holder.itemView.setOnClickListener()
+        holder.itemView.setOnClickListener {
+            action(film.filmId)
+        }
     }
 }

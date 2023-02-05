@@ -20,6 +20,7 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<Film>?) {
     adapter.submitList(data)
 }
 
+
 /**
  * Uses the Coil library to load an image by URL into an [ImageView]
  */
@@ -52,3 +53,6 @@ fun bindStatus(statusImageView: ImageView, status: KinopoiskApiStatus) {
         }
     }
 }
+
+//@BindingAdapter("waitAnswer")
+//fun bindWait()

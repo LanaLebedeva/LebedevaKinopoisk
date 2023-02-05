@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/ThemeOverlay.LebedevaKinopoisk.FullscreenContainer"
+    tools:context=".film.FilmFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.github.lanalebedeva.lebedevakinopoisk.film.SummeryFilmViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_summery_poster"
+                android:layout_width="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_height="360dp"
+                android:contentDescription="@string/poster"
+                app:imageUrl="@{viewModel.summaryFilm.posterUrl}"
+                tools:src="@drawable/loading_animation" />
+
+            <TextView
+                android:id="@+id/tv_summery_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="20dp"
+                android:text="@{viewModel.summaryFilm.nameRu}"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/tv_summery_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="16dp"
+                android:text="@{viewModel.summaryFilm.shortDescription}"
+                android:textSize="14sp"
+                tools:text="@tools:sample/lorem/random" />
+
+            <TextView
+                android:id="@+id/tv_summery_genres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="15dp"
+                android:text="@{viewModel.summaryFilm.genresString}"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/tv_summery_countries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="8dp"
+                android:text="@{viewModel.summaryFilm.countriesString}"
+                tools:text="@tools:sample/cities" />
+
+            <ImageView
+                android:id="@+id/status_image"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:KinopoiskApiStatus="@{viewModel.status}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:importantForAccessibility="no" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

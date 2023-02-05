@@ -48,6 +48,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="26dp"
                 android:text="@{film.nameRu}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_item_poster"
                 app:layout_constraintTop_toTopOf="parent"
@@ -59,21 +62,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="2dp"
+                android:text="@{film.genresString}"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@id/tv_item_nameRu"
                 app:layout_constraintStart_toEndOf="@id/iv_item_poster"
                 app:layout_constraintTop_toBottomOf="parent"
-                android:text="@{film.genresString}"/>
+                app:layout_constraintVertical_bias="0.575"
+                tools:text="@tools:sample/lorem"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="15dp"
                 android:text="@{'('+film.year+')'}"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@id/tv_item_nameRu"
                 app:layout_constraintStart_toEndOf="@id/tv_item_genres"
                 app:layout_constraintTop_toBottomOf="parent"
-                tools:text="2022"/>
+                app:layout_constraintVertical_bias="0.578"
+                tools:text="2022" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>

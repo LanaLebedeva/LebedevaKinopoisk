@@ -6,6 +6,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Headers
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 
@@ -31,6 +32,10 @@ interface KinopoiskApiService {
     @Headers("X-API-KEY: $KEY", "Content-Type: application/json")
     @GET(value = "/api/v2.2/films/top")
     suspend fun getTopFilms(@Query("type") type: String, @Query("page") page: Int): ResponseFilm
+
+    @Headers("X-API-KEY: $KEY", "Content-Type: application/json")
+    @GET(value = "/api/v2.2/films/{id}")
+    suspend fun getSummaryFilm(@Path("id") id: String): SummaryFilm
 }
 
 object KinopoiskApi {

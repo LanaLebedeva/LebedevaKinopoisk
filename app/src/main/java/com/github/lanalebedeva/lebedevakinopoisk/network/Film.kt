@@ -8,7 +8,7 @@ data class ResponseFilm(
 )
 
 data class Film(
-    @Json(name = "filmId") val filmId: String,
+    @Json(name = "filmId") val filmId: Int,
     @Json(name = "nameRu") val nameRu: String,
     @Json(name = "posterUrlPreview") val posterUrlPreview: String,
     @Json(name = "year") val year: String,
@@ -18,6 +18,6 @@ data class Film(
         mapGenres.entries.joinToString {
             it.value
         }
-    }.joinToString(separator = ", ", prefix = "", postfix = "", limit = 2, truncated = "...")
+    }.joinToString(separator = ", ", prefix = "", postfix = "", limit = 3, truncated = "...")
 
 }
