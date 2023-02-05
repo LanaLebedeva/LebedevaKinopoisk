@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lebedeva Kinopoisk</string>
+    <!--    film_item begin-->
+    <string name="poster">Movie poster</string>
+    <string name="favourites">Favourites</string>
+    <string name="popular">Popular</string>
+    <!--    film_item end-->
+
+    <!--    summery film begin-->
+    <!--    summery film begin-->
+</resources>
